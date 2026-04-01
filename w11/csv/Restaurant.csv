@@ -1,0 +1,11 @@
+restaurant_id,name,address,phone,cuisine_type,rating
+1,The Golden Fork,"123 Main St, Lakeland FL",555-1001,American,4.5
+2,Bella Italia,"456 Oak Ave, Lakeland FL",555-1002,Italian,4.2
+3,Dragon Palace,"789 Pine Rd, Lakeland FL",555-1003,Chinese,4.0
+4,Spice Garden,"321 Elm St, Lakeland FL",555-1004,Indian,4.7
+5,Taco Loco,"654 Maple Dr, Lakeland FL",555-1005,Mexican,4.3
+6,Sushi World,"987 Cedar Ln, Lakeland FL",555-1006,Japanese,4.6
+7,Burger Barn,"147 Birch Blvd, Lakeland FL",555-1007,American,3.9
+8,Mediterranean Breeze,"258 Walnut St, Lakeland FL",555-1008,Mediterranean,4.4
+9,The Vegan Corner,"369 Spruce Ave, Lakeland FL",555-1009,Vegan,4.1
+10,BBQ King,"741 Hickory Rd, Lakeland FL",555-1010,BBQ,4.8

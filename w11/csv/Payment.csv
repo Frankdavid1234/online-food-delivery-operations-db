@@ -1,0 +1,19 @@
+payment_id,order_id,payment_method,payment_date,payment_status,transaction_reference
+1,1,Credit Card,2024-01-10 12:45,Completed,TXN-100001
+2,2,PayPal,2024-01-11 13:30,Completed,TXN-100002
+3,3,Credit Card,2024-01-12 19:00,Completed,TXN-100003
+4,5,Cash,2024-01-14 11:15,Completed,TXN-100004
+5,6,Debit Card,2024-01-15 20:45,Completed,TXN-100005
+6,7,Credit Card,2024-01-16 12:15,Completed,TXN-100006
+7,8,PayPal,2024-01-17 14:00,Pending,
+8,9,Credit Card,2024-01-18 17:45,Pending,
+9,10,Debit Card,2024-01-19 18:30,Pending,
+10,11,Credit Card,2024-01-20 11:45,Completed,TXN-100010
+11,12,Cash,2024-01-21 14:15,Completed,TXN-100011
+12,13,Credit Card,2024-01-22 19:45,Completed,TXN-100012
+13,14,PayPal,2024-01-23 20:15,Completed,TXN-100013
+14,15,Debit Card,2024-01-24 12:30,Completed,TXN-100014
+15,17,Credit Card,2024-01-26 18:15,Completed,TXN-100015
+16,18,Cash,2024-01-27 20:00,Completed,TXN-100016
+17,19,Credit Card,2024-01-28 11:30,Completed,TXN-100017
+18,20,PayPal,2024-01-29 14:45,Completed,TXN-100018
