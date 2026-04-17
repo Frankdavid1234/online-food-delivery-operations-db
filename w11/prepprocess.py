@@ -3,6 +3,7 @@
 import pandas as pd
 import openpyxl
 import os
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 INPUT_FILE = os.path.join(BASE_DIR, "food_delivery_data.xlsx")
 
@@ -13,8 +14,6 @@ excel_file = pd.ExcelFile(INPUT_FILE)
 OUTPUT_DIR = os.path.join(BASE_DIR, "csv")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-excel_file = pd.ExcelFile(INPUT_FILE)
-
 def load_sheet(name):
     if name not in excel_file.sheet_names:
         raise ValueError(f"Sheet '{name}' not found.")
@@ -22,36 +21,44 @@ def load_sheet(name):
     df.columns = df.columns.str.lower().str.strip()
     return df
 
-# CUSTOMER TABLE
-customer_df = load_sheet("Customer")
-customer_df.to_csv(os.path.join(OUTPUT_DIR, "Customer.csv"), index=False)
+# Identity columns to remove per table
+IDENTITY_COLUMNS = {
+    "Customer": ["customer_id"],
+    "Restaurant": ["restaurant_id"],
+    "Driver": ["driver_id"],
+    "Food_Order": ["order_id"],
+    "MenuItem": ["menu_item_id"],
+    "OrderItem": ["order_item_id"],  # keep order_id (FK), remove only identity
+    "Payment": ["payment_id"],
+    "Review": ["review_id"]
+}
 
-# RESTAURANT TABLE
-restaurant_df = load_sheet("Restaurant")
-restaurant_df.to_csv(os.path.join(OUTPUT_DIR, "Restaurant.csv"), index=False)
+def process_and_save(sheet_name):
+    df = load_sheet(sheet_name)
 
-# DRIVER TABLE
-driver_df = load_sheet("Driver")
-driver_df.to_csv(os.path.join(OUTPUT_DIR, "Driver.csv"), index=False)
+    # Remove identity columns if they exist
+    cols_to_drop = IDENTITY_COLUMNS.get(sheet_name, [])
+    df = df.drop(columns=[col for col in cols_to_drop if col in df.columns], errors='ignore')
 
-# FOOD_ORDER TABLE
-order_df = load_sheet("Food_Order")
-order_df.to_csv(os.path.join(OUTPUT_DIR, "Food_Order.csv"), index=False)
+    # Save cleaned CSV
+    output_path = os.path.join(OUTPUT_DIR, f"{sheet_name}.csv")
+    df.to_csv(output_path, index=False)
 
-# MENU ITEM TABLE
-menu_df = load_sheet("MenuItem")
-menu_df.to_csv(os.path.join(OUTPUT_DIR, "MenuItem.csv"), index=False)
+    print(f"{sheet_name}: cleaned and saved ({len(df)} rows)")
 
-# ORDER ITEM TABLE
-order_item_df = load_sheet("OrderItem")
-order_item_df.to_csv(os.path.join(OUTPUT_DIR, "OrderItem.csv"), index=False)
+# PROCESS ALL TABLES
+tables = [
+    "Customer",
+    "Restaurant",
+    "Driver",
+    "MenuItem",
+    "Food_Order",
+    "OrderItem",
+    "Payment",
+    "Review"
+]
 
-# PAYMENT TABLE
-payment_df = load_sheet("Payment")
-payment_df.to_csv(os.path.join(OUTPUT_DIR, "Payment.csv"), index=False)
+for table in tables:
+    process_and_save(table)
 
-# REVIEW TABLE
-review_df = load_sheet("Review")
-review_df.to_csv(os.path.join(OUTPUT_DIR, "Review.csv"), index=False)
-
-print("CSV files saved to:", OUTPUT_DIR)
+print("\nCSV files saved to:", OUTPUT_DIR)

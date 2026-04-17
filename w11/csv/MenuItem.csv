@@ -1,28 +1,28 @@
-menu_item_id,restaurant_id,item_name,price,description,availability_status
-1,1,Classic Burger,12.99,Beef patty with lettuce and tomato,Available
-2,1,Grilled Chicken Sandwich,13.99,Grilled chicken with mayo,Available
-3,1,Caesar Salad,9.99,Romaine lettuce with caesar dressing,Available
-4,2,Margherita Pizza,14.99,"Tomato, mozzarella, basil",Available
-5,2,Spaghetti Bolognese,15.99,Pasta with meat sauce,Available
-6,2,Tiramisu,7.99,Classic Italian dessert,Available
-7,3,Kung Pao Chicken,13.49,Spicy chicken with peanuts,Available
-8,3,Fried Rice,10.99,Wok fried rice with vegetables,Available
-9,3,Spring Rolls,6.99,Crispy vegetable rolls,Unavailable
-10,4,Chicken Tikka Masala,16.99,Creamy tomato curry,Available
-11,4,Garlic Naan,3.99,Freshly baked bread,Available
-12,4,Mango Lassi,4.99,Yogurt mango drink,Available
-13,5,Street Tacos,11.99,Three tacos with salsa,Available
-14,5,Burrito Bowl,13.49,"Rice, beans, chicken bowl",Available
-15,5,Guacamole & Chips,7.99,Fresh guacamole,Available
-16,6,Salmon Sashimi,18.99,Fresh salmon slices,Available
-17,6,Dragon Roll,15.99,Shrimp tempura roll,Available
-18,6,Miso Soup,3.99,Traditional Japanese soup,Available
-19,7,Double Smash Burger,14.99,Double beef patty smashed,Available
-20,7,Loaded Fries,8.99,Fries with cheese and bacon,Available
-21,8,Hummus Platter,11.99,Hummus with pita bread,Available
-22,8,Lamb Kebab,17.99,Grilled lamb skewers,Available
-23,9,Buddha Bowl,13.99,"Quinoa, roasted veggies, tahini",Available
-24,9,Avocado Toast,10.99,Sourdough with avocado,Available
-25,10,BBQ Ribs Half Rack,22.99,Slow-cooked baby back ribs,Available
-26,10,Pulled Pork Sandwich,13.99,Slow-smoked pulled pork,Available
-27,10,Cornbread,4.99,Homemade sweet cornbread,Available
+restaurant_id,item_name,price,description,availability_status
+1,Classic Burger,12.99,Beef patty with lettuce and tomato,Available
+1,Grilled Chicken Sandwich,13.99,Grilled chicken with mayo,Available
+1,Caesar Salad,9.99,Romaine lettuce with caesar dressing,Available
+2,Margherita Pizza,14.99,"Tomato, mozzarella, basil",Available
+2,Spaghetti Bolognese,15.99,Pasta with meat sauce,Available
+2,Tiramisu,7.99,Classic Italian dessert,Available
+3,Kung Pao Chicken,13.49,Spicy chicken with peanuts,Available
+3,Fried Rice,10.99,Wok fried rice with vegetables,Available
+3,Spring Rolls,6.99,Crispy vegetable rolls,Unavailable
+4,Chicken Tikka Masala,16.99,Creamy tomato curry,Available
+4,Garlic Naan,3.99,Freshly baked bread,Available
+4,Mango Lassi,4.99,Yogurt mango drink,Available
+5,Street Tacos,11.99,Three tacos with salsa,Available
+5,Burrito Bowl,13.49,"Rice, beans, chicken bowl",Available
+5,Guacamole & Chips,7.99,Fresh guacamole,Available
+6,Salmon Sashimi,18.99,Fresh salmon slices,Available
+6,Dragon Roll,15.99,Shrimp tempura roll,Available
+6,Miso Soup,3.99,Traditional Japanese soup,Available
+7,Double Smash Burger,14.99,Double beef patty smashed,Available
+7,Loaded Fries,8.99,Fries with cheese and bacon,Available
+8,Hummus Platter,11.99,Hummus with pita bread,Available
+8,Lamb Kebab,17.99,Grilled lamb skewers,Available
+9,Buddha Bowl,13.99,"Quinoa, roasted veggies, tahini",Available
+9,Avocado Toast,10.99,Sourdough with avocado,Available
+10,BBQ Ribs Half Rack,22.99,Slow-cooked baby back ribs,Available
+10,Pulled Pork Sandwich,13.99,Slow-smoked pulled pork,Available
+10,Cornbread,4.99,Homemade sweet cornbread,Available

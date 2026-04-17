@@ -1,21 +1,21 @@
-review_id,customer_id,restaurant_id,rating,comment,review_date
-1,1,1,5,Excellent food and fast delivery!,2024-01-11
-2,2,2,4,"Great pizza, a bit slow.",2024-01-12
-3,3,3,5,Best Chinese food in town!,2024-01-13
-4,4,4,3,"Food was okay, not very spicy.",2024-01-14
-5,5,5,4,Tacos were delicious!,2024-01-15
-6,6,6,5,"Amazing sushi, will order again.",2024-01-16
-7,7,7,4,"Good burger, fries were cold.",2024-01-17
-8,8,8,5,Mediterranean flavors are outstanding.,2024-01-18
-9,9,9,4,Love the vegan options here.,2024-01-19
-10,10,10,5,Best BBQ ribs ever!,2024-01-20
-11,11,1,4,Consistent quality every time.,2024-01-21
-12,12,2,5,Tiramisu was heavenly!,2024-01-22
-13,13,3,3,Good food but portion size was small.,2024-01-23
-14,14,4,5,Tikka masala is absolutely authentic.,2024-01-24
-15,15,5,4,Fresh and flavorful tacos.,2024-01-25
-16,16,6,2,Order arrived late and cold.,2024-01-26
-17,17,7,5,Double burger is a must try!,2024-01-27
-18,18,8,4,Lamb kebabs were juicy and tender.,2024-01-28
-19,19,9,5,Healthiest and tastiest meal ever.,2024-01-29
-20,20,10,5,Pulled pork sandwich is incredible.,2024-01-30
+customer_id,restaurant_id,rating,comment,review_date
+1,1,5,Excellent food and fast delivery!,2024-01-11
+2,2,4,"Great pizza, a bit slow.",2024-01-12
+3,3,5,Best Chinese food in town!,2024-01-13
+4,4,3,"Food was okay, not very spicy.",2024-01-14
+5,5,4,Tacos were delicious!,2024-01-15
+6,6,5,"Amazing sushi, will order again.",2024-01-16
+7,7,4,"Good burger, fries were cold.",2024-01-17
+8,8,5,Mediterranean flavors are outstanding.,2024-01-18
+9,9,4,Love the vegan options here.,2024-01-19
+10,10,5,Best BBQ ribs ever!,2024-01-20
+11,1,4,Consistent quality every time.,2024-01-21
+12,2,5,Tiramisu was heavenly!,2024-01-22
+13,3,3,Good food but portion size was small.,2024-01-23
+14,4,5,Tikka masala is absolutely authentic.,2024-01-24
+15,5,4,Fresh and flavorful tacos.,2024-01-25
+16,6,2,Order arrived late and cold.,2024-01-26
+17,7,5,Double burger is a must try!,2024-01-27
+18,8,4,Lamb kebabs were juicy and tender.,2024-01-28
+19,9,5,Healthiest and tastiest meal ever.,2024-01-29
+20,10,5,Pulled pork sandwich is incredible.,2024-01-30

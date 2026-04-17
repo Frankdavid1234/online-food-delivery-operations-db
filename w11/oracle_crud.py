@@ -1,67 +1,91 @@
-'''
-If you are running this code first time, and you don't have oracledb installed, then follow this instruction:
-1. open a terminal
-2. enter this command
-    pip install oracledb
-'''
-
 import oracledb
 
 # --- CONFIGURATION ---
-# Path to your extracted Instant Client (Required for FreeSQL/Cloud or older oracle DB versions)
-LIB_DIR = r"C:\Users\fmoya9845\Downloads\instantclient_11_2" # Update this path to where you extracted the Instant Client
+
+# MUST be a valid, modern Instant Client path (NOT 11.2)
+LIB_DIR = r"C:\oracle\instantclient_23_0"
+
+DB_USER = "FRANK2006DAVID_SCHEMA_0JBG4"
+DB_PASS = "60QRJVO63EX!MIvDDOQ61UPNWR8K1E"
+DB_DSN  = "db.freesql.com:1521/23ai_34ui2"
 
 
-# Your Oracle Credentials
-DB_USER = "FRANK2006DAVID_SCHEMA_0JBG4" # or your FreeSQL username
-DB_PASS = "60QRJVO63EX!MIvDDOQ61UPNWR8K1E" # your password for the dbms user
-DB_DSN  = "db.freesql.com:1521/23ai_34ui2" # or your FreeSQL DSN
-#jdbc:oracle:thin:@127.0.0.1:1521:XE
-# 1. Initialize Thick Mode (Required for encrypted Cloud/FreeSQL connections)
-if LIB_DIR:
+# --- INITIALIZE THICK MODE ---
+try:
     oracledb.init_oracle_client(lib_dir=LIB_DIR)
-else: oracledb.enable_thin_mode()
+except Exception as e:
+    print(f"Oracle Client init failed: {e}")
+    exit()
 
-# 2. Establish Connection
-conn = oracledb.connect(user=DB_USER, password=DB_PASS, dsn=DB_DSN)
-cursor = conn.cursor()
-print("Connected to Oracle Database")
 
-# 3. Insert data
+# --- CONNECT ---
+try:
+    conn = oracledb.connect(
+        user=DB_USER,
+        password=DB_PASS,
+        dsn=DB_DSN
+    )
+    cursor = conn.cursor()
+    print("Connected to Oracle Database")
+
+except Exception as e:
+    print(f"Connection failed: {e}")
+    exit()
+
+
+# --- CREATE ---
 def create_record(name, email):
+    try:
+        sql = "INSERT INTO students (name, email) VALUES (:1, :2)"
+        cursor.execute(sql, [name, email])
+        conn.commit()
+        print(f"Created record for {name}")
+    except Exception as e:
+        print(f"Insert failed: {e}")
 
-    sql = "INSERT INTO students (name, email) VALUES (:1, :2)"
 
-    cursor.execute(sql, [name, email])
-    conn.commit()
-    print(f"Created record for {name}")
-
-create_record("Florida Poly Student", "student@floridapoly.edu")
-
-# 4. Fetch data
+# --- READ ---
 def read_records():
     print("\n--- Student Directory ---")
-    cursor.execute("SELECT name, email FROM students")
-    for row in cursor:
-        print(f"Name: {row[0]} | Email: {row[1]}")
+    try:
+        cursor.execute("SELECT name, email FROM students")
+        rows = cursor.fetchall()
 
-read_records()
+        if not rows:
+            print("No records found.")
+        else:
+            for row in rows:
+                print(f"Name: {row[0]} | Email: {row[1]}")
+    except Exception as e:
+        print(f"Read failed: {e}")
 
-# 5. Modify data
-def update_email(student_id, new_email):
-    sql = "UPDATE students SET email = :1 WHERE id = :2"
-    cursor.execute(sql, [new_email, student_id])
-    conn.commit()
-    print(f"Updated Student {student_id} successfully.")
 
-# 6. Delete data
+# --- UPDATE ---
+def update_email(old_email, new_email):
+    try:
+        sql = "UPDATE students SET email = :1 WHERE email = :2"
+        cursor.execute(sql, [new_email, old_email])
+
+        if cursor.rowcount > 0:
+            conn.commit()
+            print(f"Updated email from {old_email} to {new_email}")
+        else:
+            print("No matching record found.")
+    except Exception as e:
+        print(f"Update failed: {e}")
+
+
+# --- DELETE ---
 def delete_record(student_email):
-    sql = "DELETE FROM students WHERE email = :1"
-    cursor.execute(sql, [student_email])
-    conn.commit()
-    print(f"Deleted Student {student_email} successfully.")
+    try:
+        sql = "DELETE FROM students WHERE email = :1"
+        cursor.execute(sql, [student_email])
 
-# 7. Closing connection
-cursor.close()
-conn.close()
-print("Oracle connection closed.")
+        if cursor.rowcount > 0:
+            conn.commit()
+            print(f"Deleted Student {student_email}")
+        else:
+            print("No matching record found.")
+    except Exception as e:
+        print(f"Delete failed: {e}")
+
