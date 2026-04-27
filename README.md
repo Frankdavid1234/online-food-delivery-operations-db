@@ -1,3 +1,9 @@
+
+
+
+Online-Food-Delivery-Operations-Database
+The application domain is the online food delivery, which connects customers and restaurants, through a digital platform. The database supports the services similar to Uber Eats, DoorDash, or Grubhub. Data Sources : Public Data Base Kaggle UCI Machine Learning Repository Google Dataset Search Data.gov
+how to use
 To use the food delivery operations DB, we must first enter the w11 file 
 Step 1: Set up 
 At the beginning of every page, there will be a setup section where credentials must be changed to the owner's database and the Instant Client directory 
@@ -10,3 +16,7 @@ This file will take all the information from the CSV files and put it into the d
 Step 5: App.py 
 The final file is App.py; unlike the others, this one can not be run normally since it uses Streamlit. The command to run it is the following 
 python -m streamlit run app.py
+
+
+<img width="1928" height="1308" alt="image" src="https://github.com/user-attachments/assets/f3e70d7b-85a1-4bea-a35f-95b6fd838fb3" />
+
